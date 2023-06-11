@@ -1,0 +1,14 @@
+# Editors.
+*.sw*
+.vscode
+.DS_Store
+
+# Build directory.
+build/
+out/
+cloud_pcache/
+
+test/devops100000.txt
+
+db/DB.pb.h
+db/DB.pb.cc

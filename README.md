@@ -1,7 +1,7 @@
-# TimeForest
+# ForestTI
 
-TimeForest is intended to be used as a library your application code. You can check `leveldb/db/dbtest.cc` for various examples.  
-Besides, we also implement a simple http client/server which wrap TimeForest for experiments. You can check `db/db_test.cc` for the usage.
+ForestTI is intended to be used as a library your application code. You can check `leveldb/db/dbtest.cc` for various examples.  
+Besides, we also implement a simple http client/server which wrap ForestTI for experiments. You can check `db/db_test.cc` for the usage.
 
 ## Try The Test Cases
 
@@ -30,7 +30,7 @@ Configuration
 ```c++
   Options options;
   options.create_if_missing = true;
-  options.use_log = false; // Disable the log in LevelDB, use the log in TimeForest.
+  options.use_log = false; // Disable the log in LevelDB, use the log in ForestTI.
   options.max_imm_num = 3;
   options.write_buffer_size = 64 * 1024 * 1024;
 ```

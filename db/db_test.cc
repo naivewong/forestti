@@ -2069,7 +2069,8 @@ void TestInsertAndQuery1(int num, int interval = 30, int numtuple = 90) {
                 (double)(tsdbtest.tuple_size) / (double)(d)*1000000000)
             << std::endl;
 
-  sleep(60);
+  std::cout << "-------- sleep for 30 seconds before querying ----------" << std::endl;
+  sleep(30);
   ldb->PrintLevel();
 
   double vm2, rss2;

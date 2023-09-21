@@ -7,35 +7,42 @@ Besides, we also implement a simple http client/server which wrap ForestTI for e
 
 ### Prerequisite
 The code is tested under Ubuntu 20.04.    
-Dependencies: boost, tcmalloc, jemalloc, protobuf, protobuf-compiler, snappy
+Dependencies: cmake, gcc, boost, tcmalloc, jemalloc, protobuf, protobuf-compiler, profiler, snappy
 ```
-$ sudo apt-get install libboost-all-dev google-perftools libprotobuf-dev libsnappy-dev
-$ git clone https://github.com/jemalloc/jemalloc.git
-$ cd jemalloc
-$ autoconf
-$ ./configure
-$ make
-$ sudo make install
+sudo apt-get install cmake build-essential libboost-all-dev google-perftools libprotobuf-dev protobuf-compiler libgoogle-perftools-dev libsnappy-dev
+git clone https://github.com/jemalloc/jemalloc.git
+cd jemalloc
+autoconf
+./configure
+make
+sudo make install
 ```
 
 ### Example
 `leveldb/db/dbtest.cc` shows a large part of our test/bench codes. Before running it, please download the [timeseries tags file](https://drive.google.com/file/d/1L2SEp8H-wQg3xl3LvpY8Ok45xi4CSav_/view?usp=sharing) (containing 10M generated timeseries from TSBS), and place it under the folder `test` (you need to first create this folder, like the following).  
 ```
-$ mkdir test
+mkdir test
 ```
 
 Generate files from protobuf
 ```
-$ cd db
-$ protoc DB.proto --cpp_out=.
+cd db
+protoc DB.proto --cpp_out=.
 ```
 
 Compilation (in the root directory of the repo)
 ```
-$ mkdir build & cd build
-$ cmake ..
-$ make db_test
+mkdir build
+cd build
+cmake ..
+make db_test
 ```
+
+Run the generated db_test with 1000 timeseries
+```
+./db_test 1000
+```
+
 In the following, we provide some code segments to show the usage.  
 
 Configuration

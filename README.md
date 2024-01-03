@@ -43,6 +43,12 @@ Run the generated db_test with 1000 timeseries
 ./db_test 1000
 ```
 
+The explanation of the results in ./db_test
+- [#tuples] means the number of tuples that are inserted till now
+- [st] means the starting timestamp in the current insertion batch
+- The unit of the throughput is sample/s
+- After the insertion, a query will be repeated 3 times, you may see \[1-1-1\] appears 3 times
+
 In the following, we provide some code segments to show the usage.  
 
 Configuration
